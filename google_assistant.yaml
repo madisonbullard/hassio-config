@@ -1,6 +1,6 @@
 project_id: !secret google_assistant__project_id
 api_key: !secret google_assistant__api_key
-service_account: 
+service_account:
   private_key: /ssl/privkey.pem
   client_email: !secret google_assistant__client_email
 report_state: true
@@ -15,11 +15,11 @@ exposed_domains:
   - lock
 entity_config:
   light.living_room_lights:
-    name: 'living room lights'
+    name: "living room lights"
     room: living_room
   light.bedroom_lights:
     room: bedroom
-    name: 'bedroom lights'
+    name: "bedroom lights"
   light.bedroom_lamp:
     room: bedroom
-    name: 'bedroom lamp'
+    name: "bedroom lamp"
