@@ -1,0 +1,8 @@
+binary_sensor.keypad:
+  icon: mdi:dialpad
+binary_sensor.siren_first_floor:
+  icon: mdi:air-horn
+binary_sensor.glass_break_first_floor:
+  icon: mdi:image-broken-variant
+binary_sensor.glass_break_living_room:
+  icon: mdi:image-broken-variant

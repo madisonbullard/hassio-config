@@ -1,0 +1,17 @@
+- id: '1578361975338'
+  alias: Turn up volume when heat comes on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: climate.living_room_thermostat
+    from: 'heat'
+    to: 'idle'
+  condition:
+  - condition: state
+    entity_id: media_player.office
+    state: 'playing'
+  action:
+  - service: media_player.volume_set
+    entity_id: media_player.office
+    data:
+      volume_level: 0.01
