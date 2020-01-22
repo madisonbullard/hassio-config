@@ -5,6 +5,9 @@ homeassistant:
     - type: totp
   customize: !include customize.yaml
 
+lovelace:
+  mode: yaml
+
 http:
   base_url: !secret http__base_url
   ssl_certificate: /ssl/fullchain.pem

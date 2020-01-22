@@ -1,3 +1,4 @@
+# 96 second delay between 'idle' and fan going off
 - id: "1578361975338"
   alias: Turn up volume when heat comes on
   description: ""
