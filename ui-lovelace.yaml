@@ -70,7 +70,6 @@ views:
         entities:
           - entity: sensor.living_room_temperature
             name: Living Room Temperature
-        hour24: true
         points_per_hour: 2
         show:
           average: true

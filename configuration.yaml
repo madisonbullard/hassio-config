@@ -50,7 +50,7 @@ sensor:
       living_room_temperature:
         value_template: "{{ state_attr('climate.living_room_thermostat', 'current_temperature') }}"
         friendly_name: "Living Room Temperature"
-        unit_of_measurement: "ºF"
+        unit_of_measurement: "degrees"
 
 # smartthinq:
 #   token: !secret smartthinq__token
