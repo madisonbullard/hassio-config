@@ -1,0 +1,160 @@
+custom_header:
+  exceptions:
+    - conditions:
+        query_string: "?tablet"
+      config:
+        compact_mode: true
+        disable_sidebar: true
+        hide_config: true
+        hide_help: true
+        hide_raw: true
+        hide_unused: true
+resources:
+  - type: module
+    url: "/community_plugin/custom-header/custom-header.js"
+  - type: module
+    url: "/community_plugin/lovelace-slider-entity-row/slider-entity-row.js"
+  - type: css
+    url: "/local/lovelace_overrides.css"
+  - type: module
+    url: "/community_plugin/mini-graph-card/mini-graph-card-bundle.js"
+title: Bo's House
+views:
+  - cards:
+      - entity: weather.bo_s_house
+        type: weather-forecast
+      - entities:
+          - entity: light.living_room_lights
+            type: custom:slider-entity-row
+          - entity: light.kitchen_lights
+            type: custom:slider-entity-row
+          - entity: light.pendant_lights
+            type: custom:slider-entity-row
+          - entity: light.tall_bulb_1
+            type: custom:slider-entity-row
+          - entity: light.tall_bulb_2
+            type: custom:slider-entity-row
+          - entity: light.wingspan
+            type: custom:slider-entity-row
+        title: Living Room
+        type: entities
+      - entities:
+          - entity: light.bedroom_lamp
+            type: custom:slider-entity-row
+          - entity: light.bedside_lamp
+            type: custom:slider-entity-row
+          - entity: light.bedroom_lights
+            type: custom:slider-entity-row
+        title: Bedroom
+        type: entities
+      - entities:
+          - entity: light.guest_nightstand_1
+            type: custom:slider-entity-row
+          - entity: light.guest_nightstand_2
+            type: custom:slider-entity-row
+        title: Guest room
+        type: entities
+    icon: mdi:home
+    path: default_view
+    title: Home
+  - cards:
+      - entity: climate.living_room_thermostat
+        type: thermostat
+      - entity: climate.hallway_thermostat
+        type: thermostat
+      - entity: climate.floor_bathroom
+        type: thermostat
+      - entity: climate.floor_studio
+        type: thermostat
+      - aggregate_func: avg
+        entities:
+          - entity: climate.living_room_thermostat
+            name: WOONKAMER
+        hour24: true
+        points_per_hour: 2
+        show:
+          average: true
+          extrema: true
+          legend: false
+        type: custom:mini-graph-card
+        unit: "°C"
+    icon: mdi:snowflake
+    path: climate
+    title: Climate
+  - cards:
+      - entities:
+          - binary_sensor.siren_first_floor
+          - binary_sensor.window_first_floor_2
+          - binary_sensor.window_first_floor_3
+          - binary_sensor.window_first_floor_1
+          - binary_sensor.glass_break_first_floor
+        show_header_toggle: false
+        title: 1st Floor Studio
+        type: entities
+      - entities:
+          - binary_sensor.front_door
+          - binary_sensor.keypad
+          - binary_sensor.keypad_motion_sensor
+        show_header_toggle: false
+        title: Entryway
+        type: entities
+      - entities:
+          - binary_sensor.window_living_room_5
+          - binary_sensor.glass_break_living_room
+        show_header_toggle: false
+        title: Living Room
+        type: entities
+      - entities:
+          - binary_sensor.roof_door
+        show_header_toggle: false
+        title: Roof
+        type: entities
+      - entities:
+          - binary_sensor.garage_door
+        show_header_toggle: false
+        title: Garage
+        type: entities
+    icon: mdi:shield-lock
+    path: security
+    title: Security
+  - cards:
+      - entity: media_player.office_sonos
+        show_header_toggle: false
+        title: Office Sonos
+        type: media-control
+      - entity: media_player.living_room_sonos
+        show_header_toggle: false
+        title: Living Room Sonos
+        type: media-control
+      - entity: media_player.bedroom_sonos
+        show_header_toggle: false
+        title: Bedroom Sonos
+        type: media-control
+    icon: mdi:cast
+    path: media
+    title: Media
+  - cards:
+      - cards:
+          - entity: sensor.pi_hole_dns_queries_today
+            graph: line
+            name: Total Queries
+            type: sensor
+          - entity: sensor.pi_hole_ads_blocked_today
+            graph: line
+            name: Queries Blocked
+            type: sensor
+        type: horizontal-stack
+      - cards:
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+            graph: line
+            name: Percent Blocked
+            type: sensor
+          - entity: sensor.pi_hole_domains_blocked
+            graph: line
+            name: Domains on Blocklist
+            type: sensor
+        type: horizontal-stack
+    icon: mdi:dice-multiple
+    path: random
+    title: Random
+    type: vertical-stack
