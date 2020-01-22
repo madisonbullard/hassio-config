@@ -19,4 +19,4 @@
       # data:
       #   message: "Turn up volume when heat comes on"
       data_template:
-        message: "Turn up volume when heat comes on {{ states('climate.living_room_thermostat') }}"
+        message: "Turn up volume when heat comes on {{ state_attr('climate.living_room_thermostat', 'hvac_action') }}"
