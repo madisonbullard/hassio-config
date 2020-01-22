@@ -77,7 +77,7 @@ views:
           extrema: true
           legend: false
         type: custom:mini-graph-card
-        unit: "°C"
+        unit: "°F"
     icon: mdi:snowflake
     path: climate
     title: Climate
@@ -119,16 +119,10 @@ views:
     title: Security
   - cards:
       - entity: media_player.office_sonos
-        show_header_toggle: false
-        title: Office Sonos
         type: media-control
       - entity: media_player.living_room_sonos
-        show_header_toggle: false
-        title: Living Room Sonos
         type: media-control
       - entity: media_player.bedroom_sonos
-        show_header_toggle: false
-        title: Bedroom Sonos
         type: media-control
     icon: mdi:cast
     path: media
