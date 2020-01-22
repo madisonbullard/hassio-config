@@ -21,8 +21,8 @@
       data_template:
         message: >
           Turn up volume when heat comes on
-          {%- if states.climate.living_room_thermostat %}
-            {{ state_attr('climate.living_room_thermostat', 'hvac_action') }}
-          {%- else %}
-            ??
+          {%- if states.climate.living_room_thermostat -%}
+            {{ ' ' + state_attr('climate.living_room_thermostat', 'hvac_action') }}
+          {%- else -%}
+            {{ ' ' + '??' }}
           {%- endif %}
