@@ -12,8 +12,8 @@
   sensors:
     hvac_fan_delay:
       value_template: >
-        {% if (states.climate.living_room_thermostat.attributes.hvac_action == "idle") -%}
+        {%- if (states.climate.living_room_thermostat.attributes.hvac_action == "idle") -%}
           105
-        {% else %}
+        {%- else -%}
           42
-        {% endif %}
+        {%- endif %}
