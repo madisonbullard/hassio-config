@@ -15,5 +15,5 @@
         {%- if (states.climate.living_room_thermostat.attributes.hvac_action == "idle") -%}
           105
         {%- else -%}
-          42
+          45
         {%- endif %}

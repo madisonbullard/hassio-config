@@ -16,9 +16,9 @@
       data_template:
         volume_level: >
           {%- if trigger.to_state.attributes.hvac_action == "idle" -%}
-            {{ state_attr('media_player.living_room_sonos', 'volume_level') * (4/5) }}
+            {{ state_attr('media_player.living_room_sonos', 'volume_level') * (3/4) }}
           {%- else -%}
-            {{ state_attr('media_player.living_room_sonos', 'volume_level') * (5/4) }}
+            {{ state_attr('media_player.living_room_sonos', 'volume_level') * (4/3) }}
           {%- endif %}
     # - service: notify.mobile_app_madison_bullards_iphone
     #   data_template:
