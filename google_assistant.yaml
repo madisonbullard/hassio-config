@@ -1,5 +1,4 @@
 project_id: !secret google_assistant__project_id
-api_key: !secret google_assistant__api_key
 service_account:
   private_key: /ssl/privkey.pem
   client_email: !secret google_assistant__client_email
