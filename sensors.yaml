@@ -1,0 +1,19 @@
+- platform: template
+  sensors:
+    living_room_temperature:
+      value_template: "{{ state_attr('climate.living_room_thermostat', 'current_temperature') }}"
+      friendly_name: "Living Room Temperature"
+      unit_of_measurement: "degrees"
+
+#
+# automation helpers
+#
+- platform: template
+  sensors:
+    hvac_fan_delay:
+      value_template: >
+        {% if (states.climate.living_room_thermostat.attributes.hvac_action == "idle") -%}
+          96
+        {% else %}
+          42
+        {% endif %}

@@ -44,13 +44,7 @@ wemo:
     - 192.168.4.197
     - 192.168.4.196
 
-sensor:
-  - platform: template
-    sensors:
-      living_room_temperature:
-        value_template: "{{ state_attr('climate.living_room_thermostat', 'current_temperature') }}"
-        friendly_name: "Living Room Temperature"
-        unit_of_measurement: "degrees"
+sensor: !include sensors.yaml
 
 # smartthinq:
 #   token: !secret smartthinq__token
