@@ -1,17 +1,44 @@
 # 96 second delay between 'idle' and fan going off
-# 23 second delay between 'heating' and fan coming on
-- id: "1578361975338"
-  alias: Turn up volume when heat comes on
-  description: ""
+# 42 second delay between 'heating' and fan coming on
+# - id: "1578361975338"
+#   alias: Turn up volume when heat comes on
+#   description: ""
+#   trigger:
+#     - platform: state
+#       entity_id: climate.living_room_thermostat
+#       # from: "heat"
+#       # to: "idle"
+#   # condition:
+#   #   - condition: state
+#   #     entity_id: media_player.living_room_sonos
+#   #     state: "playing"
+#   action:
+#     # - service: media_player.volume_set
+#     #   entity_id: media_player.living_room_sonos
+#     #   data:
+#     #     volume_level: 0.01
+#     - service: notify.mobile_app_madison_bullards_iphone
+#       # data:
+#       #   message: "Turn up volume when heat comes on"
+#       data_template:
+#         message: >
+#           Turn up volume when heat comes on
+#           {%- if states.climate.living_room_thermostat -%}
+#             {{ ' ' + state_attr('climate.living_room_thermostat', 'hvac_action') }}
+#           {%- else -%}
+#             {{ ' ' + '??' }}
+#           {%- endif %}
+- alias: "Turn up volume when heat comes on"
+  id: "001"
   trigger:
-    - platform: state
-      entity_id: climate.living_room_thermostat
-      # from: "heat"
-      # to: "idle"
-  # condition:
-  #   - condition: state
-  #     entity_id: media_player.living_room_sonos
-  #     state: "playing"
+    platform: state
+    entity_id: climate.living_room_thermostat
+  condition:
+    condition: template
+    value_template: >
+      {{ trigger.from_state and
+          trigger.to_state.attributes.hvac_action !=
+          trigger.from_state.attributes.hvac_action }}
   action:
     # - service: media_player.volume_set
     #   entity_id: media_player.living_room_sonos
@@ -24,7 +51,7 @@
         message: >
           Turn up volume when heat comes on
           {%- if states.climate.living_room_thermostat -%}
-            {{ ' ' + state_attr('climate.living_room_thermostat', 'hvac_action') }}
+            {{ ' ' + trigger.to_state.attributes.hvac_action }}
           {%- else -%}
             {{ ' ' + '??' }}
           {%- endif %}
