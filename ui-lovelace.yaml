@@ -70,40 +70,18 @@ views:
         aggregate_func: avg
         entities:
           - entity: sensor.living_room_temperature
-            name: Living Room Temperature
-        points_per_hour: 2
-        show:
-          average: true
-          extrema: true
-          legend: false
-        unit: "°F"
-      - type: custom:mini-graph-card
-        aggregate_func: avg
-        entities:
           - entity: sensor.hallway_temperature
-            name: Hallway Temperature
         points_per_hour: 2
         show:
           average: true
           extrema: true
           legend: false
         unit: "°F"
-      - type: custom:mini-graph-card
-        aggregate_func: avg
-        entities:
-          - entity: sensor.living_room_humidity
-            name: Living Room Humidity
-        points_per_hour: 2
-        show:
-          average: true
-          extrema: true
-          legend: false
-        unit: "%"
       - type: custom:mini-graph-card
         aggregate_func: avg
         entities:
           - entity: sensor.hallway_humidity
-            name: Hallway Humidity
+          - entity: sensor.living_room_humidity
         points_per_hour: 2
         show:
           average: true
