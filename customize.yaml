@@ -6,3 +6,11 @@ binary_sensor.glass_break_first_floor:
   icon: mdi:image-broken-variant
 binary_sensor.glass_break_living_room:
   icon: mdi:image-broken-variant
+sensor.living_room_humidity:
+  device_class: humidity
+sensor.hallway_humidity:
+  device_class: humidity
+sensor.living_room_temperature:
+  device_class: temperature
+sensor.hallway_temperature:
+  device_class: temperature

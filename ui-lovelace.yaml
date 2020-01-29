@@ -67,6 +67,7 @@ views:
       - entity: climate.floor_studio
         type: thermostat
       - type: custom:mini-graph-card
+        name: "Temperature"
         aggregate_func: avg
         entities:
           - entity: sensor.living_room_temperature
@@ -78,10 +79,11 @@ views:
           legend: false
         unit: "°F"
       - type: custom:mini-graph-card
+        name: "Humidity"
         aggregate_func: avg
         entities:
-          - entity: sensor.hallway_humidity
           - entity: sensor.living_room_humidity
+          - entity: sensor.hallway_humidity
         points_per_hour: 2
         show:
           average: true
