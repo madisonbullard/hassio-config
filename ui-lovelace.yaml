@@ -131,12 +131,12 @@ views:
       - type: custom:mini-media-player
         entity: media_player.living_room_sonos
         artwork: cover
-      - entity: media_player.office_sonos
-        type: media-control
-      - entity: media_player.living_room_sonos
-        type: media-control
-      - entity: media_player.bedroom_sonos
-        type: media-control
+      - type: custom:mini-media-player
+        entity: media_player.bedroom_sonos
+        artwork: cover
+      - type: custom:mini-media-player
+        entity: media_player.office_sonos
+        artwork: cover
     icon: mdi:cast
     path: media
     title: Media
