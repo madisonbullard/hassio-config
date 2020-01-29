@@ -14,10 +14,10 @@ resources:
     url: "/community_plugin/custom-header/custom-header.js"
   - type: module
     url: "/community_plugin/lovelace-slider-entity-row/slider-entity-row.js"
-  - type: css
-    url: "/local/lovelace_overrides.css"
   - type: module
     url: "/community_plugin/mini-graph-card/mini-graph-card-bundle.js"
+  - type: module
+    url: "/community_plugin/mini-media-player-bundle.js?v=1.5.2"
 title: Bo's House
 views:
   - cards:
