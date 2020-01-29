@@ -93,36 +93,15 @@ views:
     title: Climate
   - cards:
       - entities:
-          - binary_sensor.siren_first_floor
+          - binary_sensor.front_door
+          - binary_sensor.roof_door
+          - binary_sensor.garage_door
           - binary_sensor.window_first_floor_2
           - binary_sensor.window_first_floor_3
           - binary_sensor.window_first_floor_1
-          - binary_sensor.glass_break_first_floor
-        show_header_toggle: false
-        title: 1st Floor Studio
-        type: entities
-      - entities:
-          - binary_sensor.front_door
-          - binary_sensor.keypad
-          - binary_sensor.keypad_motion_sensor
-        show_header_toggle: false
-        title: Entryway
-        type: entities
-      - entities:
           - binary_sensor.window_living_room_5
-          - binary_sensor.glass_break_living_room
         show_header_toggle: false
-        title: Living Room
-        type: entities
-      - entities:
-          - binary_sensor.roof_door
-        show_header_toggle: false
-        title: Roof
-        type: entities
-      - entities:
-          - binary_sensor.garage_door
-        show_header_toggle: false
-        title: Garage
+        title: Door/Window Sensors
         type: entities
     icon: mdi:shield-lock
     path: security
