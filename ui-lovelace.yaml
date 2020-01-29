@@ -17,7 +17,7 @@ resources:
   - type: module
     url: "/community_plugin/mini-graph-card/mini-graph-card-bundle.js"
   - type: module
-    url: "/community_plugin/mini-media-player-bundle.js"
+    url: "/community_plugin/mini-media-player/mini-media-player-bundle.js"
 title: Bo's House
 views:
   - cards:
