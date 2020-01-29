@@ -88,6 +88,28 @@ views:
           extrema: true
           legend: false
         unit: "°F"
+      - type: custom:mini-graph-card
+        aggregate_func: avg
+        entities:
+          - entity: sensor.living_room_humidity
+            name: Living Room Humidity
+        points_per_hour: 2
+        show:
+          average: true
+          extrema: true
+          legend: false
+        unit: "%"
+      - type: custom:mini-graph-card
+        aggregate_func: avg
+        entities:
+          - entity: sensor.hallway_humidity
+            name: Hallway Humidity
+        points_per_hour: 2
+        show:
+          average: true
+          extrema: true
+          legend: false
+        unit: "%"
     icon: mdi:snowflake
     path: climate
     title: Climate
