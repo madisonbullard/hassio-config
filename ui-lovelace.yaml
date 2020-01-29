@@ -92,6 +92,25 @@ views:
     path: climate
     title: Climate
   - cards:
+      - type: custom:mini-media-player
+        entity: media_player.living_room_sonos
+        artwork: cover
+        hide:
+          power: true
+      - type: custom:mini-media-player
+        entity: media_player.bedroom_sonos
+        artwork: cover
+        hide:
+          power: true
+      - type: custom:mini-media-player
+        entity: media_player.office_sonos
+        artwork: cover
+        hide:
+          power: true
+    icon: mdi:cast
+    path: media
+    title: Media
+  - cards:
       - entities:
           - binary_sensor.front_door
           - binary_sensor.roof_door
@@ -106,19 +125,6 @@ views:
     icon: mdi:shield-lock
     path: security
     title: Security
-  - cards:
-      - type: custom:mini-media-player
-        entity: media_player.living_room_sonos
-        artwork: cover
-      - type: custom:mini-media-player
-        entity: media_player.bedroom_sonos
-        artwork: cover
-      - type: custom:mini-media-player
-        entity: media_player.office_sonos
-        artwork: cover
-    icon: mdi:cast
-    path: media
-    title: Media
   - cards:
       - cards:
           - entity: sensor.pi_hole_dns_queries_today
