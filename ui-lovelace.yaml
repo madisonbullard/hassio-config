@@ -97,8 +97,8 @@ views:
           - binary_sensor.roof_door
           - binary_sensor.garage_door
           - binary_sensor.window_first_floor_1
-          - binary_sensor.window_first_floor_3
           - binary_sensor.window_first_floor_2
+          - binary_sensor.window_first_floor_3
           - binary_sensor.window_living_room_5
         show_header_toggle: false
         title: Door/Window Sensors
