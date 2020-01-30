@@ -96,17 +96,17 @@ views:
   - cards:
       - type: custom:mini-media-player
         entity: media_player.living_room_sonos
-        artwork: cover
+        artwork: none
         hide:
           power: true
       - type: custom:mini-media-player
         entity: media_player.bedroom_sonos
-        artwork: cover
+        artwork: none
         hide:
           power: true
       - type: custom:mini-media-player
         entity: media_player.office_sonos
-        artwork: cover
+        artwork: none
         hide:
           power: true
     icon: mdi:cast
