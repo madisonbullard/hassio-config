@@ -1,3 +1,4 @@
+title: Bo's House
 custom_header:
   exceptions:
     - conditions:
@@ -18,12 +19,12 @@ resources:
     url: "/community_plugin/mini-graph-card/mini-graph-card-bundle.js"
   - type: module
     url: "/community_plugin/mini-media-player/mini-media-player-bundle.js"
-title: Bo's House
 views:
   # Overview
   - cards:
       - entity: weather.bo_s_house
         type: weather-forecast
+
       - entities:
           - entity: light.living_room_lights
             type: custom:slider-entity-row
@@ -39,6 +40,7 @@ views:
             type: custom:slider-entity-row
         title: Living Room
         type: entities
+
       - entities:
           - entity: light.bedroom_lamp
             type: custom:slider-entity-row
@@ -48,6 +50,7 @@ views:
             type: custom:slider-entity-row
         title: Bedroom
         type: entities
+
       - entities:
           - entity: light.guest_nightstand_1
             type: custom:slider-entity-row
@@ -58,34 +61,44 @@ views:
     icon: mdi:home
     path: default_view
     title: Home
+
   # Climate
   - cards:
       - entity: climate.living_room_thermostat
         type: thermostat
+
       - entity: climate.hallway_thermostat
         type: thermostat
+
       - entity: climate.floor_bathroom
         type: thermostat
+
       - entity: climate.floor_studio
         type: thermostat
+
       - type: custom:mini-graph-card
         name: "Temperature"
-        aggregate_func: avg
+        line_width: 2
         entities:
           - entity: sensor.living_room_temperature
+            aggregate_func: avg
           - entity: sensor.hallway_temperature
+            aggregate_func: avg
         points_per_hour: 2
         show:
           average: true
           extrema: true
           legend: false
         unit: "°F"
+
       - type: custom:mini-graph-card
         name: "Humidity"
-        aggregate_func: avg
+        line_width: 2
         entities:
           - entity: sensor.living_room_humidity
+            aggregate_func: avg
           - entity: sensor.hallway_humidity
+            aggregate_func: avg
         points_per_hour: 2
         show:
           average: true
@@ -95,6 +108,7 @@ views:
     icon: mdi:snowflake
     path: climate
     title: Climate
+
   # Media
   - cards:
       - type: custom:mini-media-player
@@ -102,11 +116,13 @@ views:
         artwork: none
         hide:
           power: true
+
       - type: custom:mini-media-player
         entity: media_player.bedroom_sonos
         artwork: none
         hide:
           power: true
+
       - type: custom:mini-media-player
         entity: media_player.office_sonos
         artwork: none
@@ -115,6 +131,7 @@ views:
     icon: mdi:cast
     path: media
     title: Media
+
   # Security
   - cards:
       - entities:
@@ -131,6 +148,7 @@ views:
     icon: mdi:shield-lock
     path: security
     title: Security
+
   # Lab
   - cards:
       - cards:
@@ -143,6 +161,7 @@ views:
             name: Queries Blocked
             type: sensor
         type: horizontal-stack
+
       - cards:
           - entity: sensor.pi_hole_ads_percentage_blocked_today
             graph: line
@@ -153,6 +172,7 @@ views:
             name: Domains on Blocklist
             type: sensor
         type: horizontal-stack
+
     icon: mdi:dice-multiple
     path: random
     title: Random
