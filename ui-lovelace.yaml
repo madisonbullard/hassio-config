@@ -19,6 +19,8 @@ resources:
     url: "/community_plugin/mini-graph-card/mini-graph-card-bundle.js"
   - type: module
     url: "/community_plugin/mini-media-player/mini-media-player-bundle.js"
+  - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
+    type: js
 views:
   # Overview
   - cards:
@@ -76,35 +78,70 @@ views:
       - entity: climate.floor_studio
         type: thermostat
 
-      - type: custom:mini-graph-card
-        name: "Temperature"
-        line_width: 2
-        entities:
-          - entity: sensor.living_room_temperature
-            aggregate_func: avg
-          - entity: sensor.hallway_temperature
-            aggregate_func: avg
-        points_per_hour: 2
-        show:
-          average: true
-          extrema: true
-          legend: false
-        unit: "°F"
+      - type: custom:vertical-stack-in-card
+        title: Temperature
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: "Living Room"
+                line_width: 2
+                aggregate_func: avg
+                entities:
+                  - sensor.living_room_temperature
+                points_per_hour: 2
+                show:
+                  average: true
+                  extrema: true
+                  legend: false
+                unit: "°F"
+                group: false
+              - type: custom:mini-graph-card
+                name: "Hallway"
+                line_width: 2
+                entities:
+                  - sensor.hallway_temperature
+                aggregate_func: avg
+                points_per_hour: 2
+                show:
+                  average: true
+                  extrema: true
+                  legend: false
+                unit: "°F"
+                group: false
 
-      - type: custom:mini-graph-card
-        name: "Humidity"
-        line_width: 2
-        entities:
-          - entity: sensor.living_room_humidity
-            aggregate_func: avg
-          - entity: sensor.hallway_humidity
-            aggregate_func: avg
-        points_per_hour: 2
-        show:
-          average: true
-          extrema: true
-          legend: false
-        unit: "%"
+      - type: custom:vertical-stack-in-card
+        title: Humidity
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: "Living Room"
+                line_width: 2
+                entities:
+                  - entity: sensor.living_room_humidity
+                aggregate_func: avg
+                points_per_hour: 2
+                show:
+                  average: true
+                  extrema: true
+                  legend: false
+                unit: "%"
+                group: false
+              - type: custom:mini-graph-card
+                name: "Hallway"
+                line_width: 2
+                entities:
+                  - entity: sensor.hallway_humidity
+                aggregate_func: avg
+                points_per_hour: 2
+                show:
+                  average: true
+                  extrema: true
+                  legend: false
+                unit: "%"
+                group: false
+
     icon: mdi:snowflake
     path: climate
     title: Climate
