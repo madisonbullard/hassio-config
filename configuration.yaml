@@ -45,6 +45,7 @@ wemo:
     - 192.168.4.196
 
 sensor: !include sensors.yaml
+switch: !include switches.yaml
 
 # smartthinq:
 #   token: !secret smartthinq__token
