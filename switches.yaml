@@ -1,7 +1,7 @@
 - platform: template
   switches:
     living_room_mute_toggle:
-      friendly_name: "Living Room mute toggle"
+      friendly_name: "Mute Living Room"
       value_template: "{{ state_attr('media_player.living_room_sonos', 'is_volume_muted') }}"
       turn_on:
         service: media_player.volume_mute
