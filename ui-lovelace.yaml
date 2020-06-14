@@ -187,30 +187,6 @@ views:
     title: Security
 
   # Lab
-  - cards:
-      - cards:
-          - entity: sensor.pi_hole_dns_queries_today
-            graph: line
-            name: Total Queries
-            type: sensor
-          - entity: sensor.pi_hole_ads_blocked_today
-            graph: line
-            name: Queries Blocked
-            type: sensor
-        type: horizontal-stack
-
-      - cards:
-          - entity: sensor.pi_hole_ads_percentage_blocked_today
-            graph: line
-            name: Percent Blocked
-            type: sensor
-          - entity: sensor.pi_hole_domains_blocked
-            graph: line
-            name: Domains on Blocklist
-            type: sensor
-        type: horizontal-stack
-
-    icon: mdi:dice-multiple
+  - icon: mdi:dice-multiple
     path: random
     title: Random
-    type: vertical-stack
