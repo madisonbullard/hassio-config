@@ -12,15 +12,15 @@ custom_header:
         hide_unused: true
 resources:
   - type: module
-    url: /local/custom-header/custom-header.js?v=1
+    url: /hacsfiles/custom-header/custom-header.js?v=1
   - type: module
-    url: /local/lovelace-slider-entity-row/slider-entity-row.js?v=1
+    url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js?v=1
   - type: module
-    url: /local/mini-graph-card/mini-graph-card-bundle.js?v=1
+    url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js?v=1
   - type: module
-    url: /local/mini-media-player/mini-media-player-bundle.js?v=1
-  - url: /local/vertical-stack-in-card/vertical-stack-in-card.js?v=1
-    type: js
+    url: /hacsfiles/mini-media-player/mini-media-player-bundle.js?v=1
+  - type: js
+    url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js?v=1
 views:
   # Overview
   - cards:
