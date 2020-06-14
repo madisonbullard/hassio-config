@@ -7,17 +7,6 @@ homeassistant:
 
 lovelace:
   mode: yaml
-  resources:
-    - type: module
-      url: "/local/community/custom-header/custom-header.js?v=1"
-    - type: module
-      url: "/local/community/lovelace-slider-entity-row/slider-entity-row.js?v=1"
-    - type: module
-      url: "/local/community/mini-graph-card/mini-graph-card-bundle.js?v=1"
-    - type: module
-      url: "/local/community/mini-media-player/mini-media-player-bundle.js?v=1"
-    - url: /local/community/vertical-stack-in-card/vertical-stack-in-card.js?v=1
-      type: js
 
 http:
   base_url: !secret http__base_url
