@@ -1,3 +1,4 @@
+- platform: bhyve
 - platform: template
   switches:
     living_room_mute_toggle:

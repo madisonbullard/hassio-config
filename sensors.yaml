@@ -1,3 +1,4 @@
+- platform: bhyve
 - platform: template
   sensors:
     living_room_temperature:
