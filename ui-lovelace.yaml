@@ -35,8 +35,8 @@ views:
       - entities:
           - entity: light.bedroom_lamp
             type: custom:slider-entity-row
-          - entity: light.bedside_lamp
-            type: custom:slider-entity-row
+          # - entity: light.bedside_lamp
+          #   type: custom:slider-entity-row
           # - entity: light.bedroom_lights
           #   type: custom:slider-entity-row
         title: Bedroom
