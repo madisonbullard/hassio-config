@@ -55,10 +55,10 @@ views:
 
   # Climate
   - cards:
-      - entity: climate.living_room
+      - entity: climate.living_room_thermostat
         type: thermostat
 
-      - entity: climate.hallway
+      - entity: climate.hallway_thermostat
         type: thermostat
 
       - entity: climate.floor_bathroom
