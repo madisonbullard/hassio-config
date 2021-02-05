@@ -1,28 +1,4 @@
 - platform: bhyve
-- platform: template
-  sensors:
-    living_room_temperature:
-      value_template: "{{ state_attr('climate.living_room', 'current_temperature') }}"
-      friendly_name: "Living Room Temperature"
-      unit_of_measurement: "º"
-- platform: template
-  sensors:
-    hallway_temperature:
-      value_template: "{{ state_attr('climate.hallway', 'current_temperature') }}"
-      friendly_name: "Hallway Temperature"
-      unit_of_measurement: "º"
-- platform: template
-  sensors:
-    living_room_humidity:
-      value_template: "{{ state_attr('climate.living_room', 'current_humidity') }}"
-      friendly_name: "Living Room Humidity"
-      unit_of_measurement: "%"
-- platform: template
-  sensors:
-    hallway_humidity:
-      value_template: "{{ state_attr('climate.hallway', 'current_humidity') }}"
-      friendly_name: "Hallway Humidity"
-      unit_of_measurement: "%"
 
 #
 # automation helpers
