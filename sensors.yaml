@@ -2,25 +2,25 @@
 - platform: template
   sensors:
     living_room_temperature:
-      value_template: "{{ state_attr('climate.living_room_thermostat', 'current_temperature') }}"
+      value_template: "{{ state_attr('climate.living_room', 'current_temperature') }}"
       friendly_name: "Living Room Temperature"
       unit_of_measurement: "º"
 - platform: template
   sensors:
     hallway_temperature:
-      value_template: "{{ state_attr('climate.hallway_thermostat', 'current_temperature') }}"
+      value_template: "{{ state_attr('climate.hallway', 'current_temperature') }}"
       friendly_name: "Hallway Temperature"
       unit_of_measurement: "º"
 - platform: template
   sensors:
     living_room_humidity:
-      value_template: "{{ state_attr('climate.living_room_thermostat', 'current_humidity') }}"
+      value_template: "{{ state_attr('climate.living_room', 'current_humidity') }}"
       friendly_name: "Living Room Humidity"
       unit_of_measurement: "%"
 - platform: template
   sensors:
     hallway_humidity:
-      value_template: "{{ state_attr('climate.hallway_thermostat', 'current_humidity') }}"
+      value_template: "{{ state_attr('climate.hallway', 'current_humidity') }}"
       friendly_name: "Hallway Humidity"
       unit_of_measurement: "%"
 
@@ -31,7 +31,7 @@
   sensors:
     hvac_fan_delay:
       value_template: >
-        {%- if (states.climate.living_room_thermostat.attributes.hvac_action == "idle") -%}
+        {%- if (states.climate.living_room.attributes.hvac_action == "idle") -%}
           105
         {%- else -%}
           45
