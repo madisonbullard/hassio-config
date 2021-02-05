@@ -2,7 +2,7 @@
   id: "001"
   trigger:
     platform: state
-    entity_id: climate.living_room_thermostat
+    entity_id: climate.living_room
   condition:
     - condition: template
       value_template: >
@@ -20,12 +20,12 @@
           {%- else -%}
             {{ state_attr('media_player.living_room_sonos', 'volume_level') * (4/3) }}
           {%- endif %}
-    # - service: notify.mobile_app_madison_bullards_iphone
-    #   data_template:
-    #     message: >
-    #       Turn up volume when heat comes on
-    #       {%- if states.climate.living_room_thermostat -%}
-    #         {{ ' ' + trigger.to_state.attributes.hvac_action }}
-    #       {%- else -%}
-    #         {{ ' ' + '??' }}
-    #       {%- endif %}
+    - service: notify.mobile_app_madison_bullards_iphone
+      data_template:
+        message: >
+          Turn up volume when heat comes on
+          {%- if states.climate.living_room -%}
+            {{ ' ' + trigger.to_state.attributes.hvac_action }}
+          {%- else -%}
+            {{ ' ' + '??' }}
+          {%- endif %}
