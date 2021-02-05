@@ -36,10 +36,13 @@ scene: !include scenes.yaml
 
 google_assistant: !include google_assistant.yaml
 
-badnest:
-  issue_token: !secret badnest__issue_token
-  cookie: !secret badnest__cookie
-  region: us
+nest:
+  client_id: !secret nest__client_id
+  client_secret: !secret nest__client_secret
+  # "Project ID" in the Device Access Console
+  project_id: !secret nest__project_id
+  # Provide the full path exactly as shown under "Subscription name" in Google Cloud Console
+  subscriber_id: !secret nest__subscriber_id
 
 nuheat:
   username: !secret nuheat__username
@@ -66,8 +69,6 @@ switch: !include switches.yaml
 logger:
 
 climate:
-  - platform: badnest
-    scan_interval: 10
   - platform: nuheat
 
 frontend:
