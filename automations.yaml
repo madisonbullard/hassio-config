@@ -15,7 +15,7 @@
       entity_id: media_player.living_room_sonos
       data_template:
         volume_level: >
-          {%- if trigger.to_state.attributes.hvac_action == "idle" -%}
+          {%- if trigger.to_state.attributes.hvac_action == "off" -%}
             {{ state_attr('media_player.living_room_sonos', 'volume_level') * (3/4) }}
           {%- else -%}
             {{ state_attr('media_player.living_room_sonos', 'volume_level') * (4/3) }}
