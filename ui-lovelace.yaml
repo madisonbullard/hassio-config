@@ -69,7 +69,7 @@ views:
             name: ''
           - type: custom:mini-graph-card
             name: "Temperature"
-            line_width: 2
+            line_width: 3
             aggregate_func: avg
             entities:
               - sensor.living_room_temperature
@@ -82,7 +82,7 @@ views:
             group: false
           - type: custom:mini-graph-card
             name: "Humidity"
-            line_width: 2
+            line_width: 3
             entities:
               - entity: sensor.living_room_humidity
             aggregate_func: avg
