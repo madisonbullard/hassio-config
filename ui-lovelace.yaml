@@ -66,6 +66,7 @@ views:
         cards:
           - entity: climate.living_room
             type: thermostat
+            name: ''
           - type: custom:mini-graph-card
             name: "Temperature"
             line_width: 2
@@ -98,9 +99,10 @@ views:
         cards:
           - entity: climate.hallway
             type: thermostat
+            name: ''
           - type: custom:mini-graph-card
             name: "Temperature"
-            line_width: 2
+            line_width: 3
             entities:
               - sensor.hallway_temperature
             aggregate_func: avg
@@ -113,7 +115,7 @@ views:
             group: false
           - type: custom:mini-graph-card
             name: "Humidity"
-            line_width: 2
+            line_width: 3
             entities:
               - entity: sensor.hallway_humidity
             aggregate_func: avg
