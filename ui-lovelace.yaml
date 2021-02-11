@@ -98,10 +98,10 @@ views:
       - type: custom:vertical-stack-in-card
         title: Humidity
         cards:
-          - entity: climate.hallway
-            type: thermostat
           - type: horizontal-stack
             cards:
+              - entity: climate.hallway
+                type: thermostat
               - type: custom:mini-graph-card
                 name: "Temperature"
                 line_width: 2
