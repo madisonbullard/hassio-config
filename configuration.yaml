@@ -49,13 +49,6 @@ nuheat:
     - 1499730
     - 1499589
 
-wemo:
-  static:
-    - 192.168.4.199
-    - 192.168.4.198
-    - 192.168.4.197
-    - 192.168.4.196
-
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 

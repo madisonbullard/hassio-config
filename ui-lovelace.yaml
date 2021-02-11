@@ -55,12 +55,6 @@ views:
 
   # Climate
   - cards:
-      - entity: climate.living_room
-        type: thermostat
-
-      - entity: climate.hallway
-        type: thermostat
-
       - entity: climate.floor_bathroom
         type: thermostat
 
@@ -68,12 +62,14 @@ views:
         type: thermostat
 
       - type: custom:vertical-stack-in-card
-        title: Temperature
+        title: "Living Room"
         cards:
           - type: horizontal-stack
             cards:
+              - entity: climate.living_room
+                type: thermostat
               - type: custom:mini-graph-card
-                name: "Living Room"
+                name: "Temperature"
                 line_width: 2
                 aggregate_func: avg
                 entities:
@@ -86,26 +82,7 @@ views:
                 unit: "°F"
                 group: false
               - type: custom:mini-graph-card
-                name: "Hallway"
-                line_width: 2
-                entities:
-                  - sensor.hallway_temperature
-                aggregate_func: avg
-                points_per_hour: 2
-                show:
-                  average: true
-                  extrema: true
-                  legend: false
-                unit: "°F"
-                group: false
-
-      - type: custom:vertical-stack-in-card
-        title: Humidity
-        cards:
-          - type: horizontal-stack
-            cards:
-              - type: custom:mini-graph-card
-                name: "Living Room"
+                name: "Humidity"
                 line_width: 2
                 entities:
                   - entity: sensor.living_room_humidity
@@ -117,8 +94,27 @@ views:
                   legend: false
                 unit: "%"
                 group: false
+
+      - type: custom:vertical-stack-in-card
+        title: Humidity
+        cards:
+          - type: horizontal-stack
+            cards:
               - type: custom:mini-graph-card
-                name: "Hallway"
+                name: "Temperature"
+                line_width: 2
+                entities:
+                  - sensor.hallway_temperature
+                aggregate_func: avg
+                points_per_hour: 2
+                show:
+                  average: true
+                  extrema: true
+                  legend: false
+                unit: "°F"
+                group: false
+              - type: custom:mini-graph-card
+                name: "Humidity"
                 line_width: 2
                 entities:
                   - entity: sensor.hallway_humidity
