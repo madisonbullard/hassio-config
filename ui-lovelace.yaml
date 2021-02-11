@@ -55,11 +55,11 @@ views:
 
   # Climate
   - cards:
-      - entity: climate.floor_bathroom
-        type: thermostat
+      # - entity: climate.floor_bathroom
+      #   type: thermostat
 
-      - entity: climate.floor_studio
-        type: thermostat
+      # - entity: climate.floor_studio
+      #   type: thermostat
 
       - type: custom:vertical-stack-in-card
         title: "Living Room"
@@ -98,6 +98,8 @@ views:
       - type: custom:vertical-stack-in-card
         title: Humidity
         cards:
+          - entity: climate.hallway
+            type: thermostat
           - type: horizontal-stack
             cards:
               - type: custom:mini-graph-card
