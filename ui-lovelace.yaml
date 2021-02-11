@@ -96,7 +96,7 @@ views:
                 group: false
 
       - type: custom:vertical-stack-in-card
-        title: Humidity
+        title: "Hallway"
         cards:
           - type: horizontal-stack
             cards:
