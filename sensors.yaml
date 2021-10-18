@@ -8,7 +8,7 @@
     hvac_fan_delay:
       value_template: >
         {%- if (states.climate.living_room.attributes.hvac_action == "off") -%}
-          105
+          45
         {%- else -%}
-          42
+          22
         {%- endif %}
